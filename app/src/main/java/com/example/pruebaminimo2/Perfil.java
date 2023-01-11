@@ -70,11 +70,11 @@ public class Perfil extends AppCompatActivity {
     }
 
     private void doApiCall() {
-        //Bundle extras = getIntent().getExtras();
-        //String owner = extras.getString("key");
+        Bundle extras = getIntent().getExtras();
+        String owner = extras.getString("key");
         //Log.d("Owner", owner);
         GitHub gitHubService = GitHub.retrofit.create(GitHub.class);
-        Call<List<Contributor>> call = gitHubService.contributors("MarcelMarco");//owner
+        Call<List<Contributor>> call = gitHubService.contributors(owner);//"MarcelMarco"
         Log.d("Call1234", call.request().toString());
         call.enqueue(new Callback<List<Contributor>>() {
             @Override

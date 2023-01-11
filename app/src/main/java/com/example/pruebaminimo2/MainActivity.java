@@ -30,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
         Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Perfil.class));
-                //Intent i = new Intent(MainActivity.this, Perfil.class);
-                //i.putExtra("key",User.getText().toString());
-                //startActivity(i);
+                //startActivity(new Intent(MainActivity.this, Perfil.class));
+                Intent i = new Intent(MainActivity.this, Perfil.class);
+                i.putExtra("key",User.getText().toString());
+                startActivity(i);
                 }
         });
     }
